@@ -10,24 +10,22 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(306, 311)
         MainWindow.setStyleSheet("")
         self.label = QtWidgets.QLabel(MainWindow)
-        self.label.setGeometry(QtCore.QRect(100, 10, 111, 16))
+        self.label.setGeometry(QtCore.QRect(80, 10, 151, 16))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(MainWindow)
-        self.label_2.setGeometry(QtCore.QRect(70, 130, 47, 13))
+        self.label_2.setGeometry(QtCore.QRect(70, 130, 67, 13))
         self.label_2.setObjectName("label_2")
         self.lineEdit = QtWidgets.QLineEdit(MainWindow)
         self.lineEdit.setGeometry(QtCore.QRect(70, 160, 51, 20))
         self.lineEdit.setObjectName("lineEdit")
         self.label_3 = QtWidgets.QLabel(MainWindow)
-        self.label_3.setGeometry(QtCore.QRect(180, 130, 47, 13))
+        self.label_3.setGeometry(QtCore.QRect(180, 130, 67, 13))
         self.label_3.setObjectName("label_3")
         self.lineEdit_2 = QtWidgets.QLineEdit(MainWindow)
         self.lineEdit_2.setGeometry(QtCore.QRect(180, 160, 51, 20))
@@ -37,11 +35,11 @@ class Ui_MainWindow(object):
         self.pushButton.clicked.connect(self.calculo)
         self.pushButton.setObjectName("pushButton")
         self.label_4 = QtWidgets.QLabel(MainWindow)
-        self.label_4.setGeometry(QtCore.QRect(50, 250, 211, 20))
+        self.label_4.setGeometry(QtCore.QRect(75, 250, 300, 40))
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(MainWindow)
-        self.label_5.setGeometry(QtCore.QRect(70, 60, 61, 16))
+        self.label_5.setGeometry(QtCore.QRect(65, 60, 81, 16))
         self.label_5.setObjectName("label_5")
         self.lineEdit_3 = QtWidgets.QLineEdit(MainWindow)
         self.lineEdit_3.setGeometry(QtCore.QRect(70, 90, 51, 20))
@@ -62,356 +60,66 @@ class Ui_MainWindow(object):
         self.altura = float(self.lineEdit_2.text())
         self.gen = str(self.lineEdit_3.text()).upper()
         self.idade = int(self.lineEdit_4.text())
-        self.imcval = self.peso / (self.altura * self.altura)
+        self.imcval = self.peso / (self.altura ** 2)
 
-        if self.gen == "M":
-            if self.idade == 1:
-                if self.imcval > 19.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 18.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 14.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 2:
-                if self.imcval > 18.7:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 14:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 3:
-                if self.imcval > 18.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 4:
-                if self.imcval > 18:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 16.7:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 5:
-                if self.imcval > 18.1:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 16.7:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 6:
-                if self.imcval > 18.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 16.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 7:
-                if self.imcval > 18.7:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.3:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 8:
-                if self.imcval > 19.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 9:
-                if self.imcval > 20.1:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 18:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 10:
-                if self.imcval > 28.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 25:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 17.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 11:
-                if self.imcval > 22:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 19.3:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 14.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 12:
-                if self.imcval > 23:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 20:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 14.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 13:
-                if self.imcval > 24.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 21:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 15:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 14:
-                if self.imcval > 25.3:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 21.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 15.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 15:
-                if self.imcval > 26.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 22.8:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 16.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 16:
-                if self.imcval > 27.3:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 23.7:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 16.7:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 17:
-                if self.imcval > 28:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 24.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 17.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 18:
-                if self.imcval > 28.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 25:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 17.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade >= 19:
-                if self.imcval > 30:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 25:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 18.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
+        categorias = {"M": { 1 : [19.6, 18.2, 14.5],
+                             2 : [18.7, 17.4, 14.0],
+                             3 : [18.2, 17.0, 13.4],
+                             4 : [18.0, 16.7, 13.2],
+                             5 : [18.1, 16.7, 13.0],
+                             6 : [18.4, 16.9, 13.2],
+                             7 : [18.7, 17.2, 13.3],
+                             8 : [19.4, 17.5, 13.5],
+                             9 : [20.1, 18.0, 13.6],
+                            10 : [28.6, 25.0, 17.5], # Conferir esses valores
+                            11 : [22.0, 19.3, 14.2],
+                            12 : [23.0, 20.0, 14.6],
+                            13 : [24.2, 21.0, 15.0],
+                            14 : [25.3, 21.9, 15.6],
+                            15 : [26.4, 22.8, 16.2],
+                            16 : [27.3, 23.7, 16.7],
+                            17 : [28.0, 24.5, 17.2],
+                            18 : [28.6, 25.0, 17.5],
+                            19 : [30.0, 25.0, 18.5],},
+
+                      "F": { 1 : [19.4, 17.9, 13.9],
+                             2 : [18.5, 17.2, 13.5],
+                             3 : [18.2, 16.8, 13.2],
+                             4 : [18.3, 16.8, 13.0],
+                             5 : [18.6, 17.0, 12.8],
+                             6 : [18.9, 17.1, 12.8],
+                             7 : [19.5, 17.4, 12.9],
+                             8 : [20.1, 17.8, 13.0],
+                             9 : [21.0, 18.5, 13.3],
+                            10 : [22.0, 19.1, 13.6],
+                            11 : [23.2, 20.0, 14.0],
+                            12 : [24.4, 20.9, 14.5],
+                            13 : [25.6, 22.0, 15.1],
+                            14 : [26.6, 22.9, 15.6],
+                            15 : [27.6, 23.6, 16.1],
+                            16 : [28.3, 24.3, 16.4],
+                            17 : [28.6, 24.6, 16.6],
+                            18 : [28.9, 24.9, 16.7],
+                            19 : [30.0, 24.9, 18.5],},
+            }
+
+        if self.idade > 18:
+            idade_ref = 19
+        else:
+            idade_ref = self.idade
 
 
-        if self.gen == "F":
-            if self.idade == 1:
-                if self.imcval > 19.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 2:
-                if self.imcval > 18.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 3:
-                if self.imcval > 18.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 16.8:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 4:
-                if self.imcval > 18.3:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 16.8:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 5:
-                if self.imcval > 18.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 12.8:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 6:
-                if self.imcval > 18.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17.1:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 12.8:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 7:
-                if self.imcval > 19.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 12.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 8:
-                if self.imcval > 20.1:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 17.8:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 9:
-                if self.imcval > 21:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 18.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.3:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 10:
-                if self.imcval > 22:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 19.1:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 13.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 11:
-                if self.imcval > 23.2:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 20:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 14:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 12:
-                if self.imcval > 24.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 20.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 14.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 13:
-                if self.imcval > 25.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 22:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 15.1:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 14:
-                if self.imcval > 26.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 22.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 15.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 15:
-                if self.imcval > 27.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 23.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 16.1:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 16:
-                if self.imcval > 28.3:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 24.3:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 16.4:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 17:
-                if self.imcval > 28.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 24.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 16.6:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade == 18:
-                if self.imcval > 28.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 24.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 16.7:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-            if self.idade >= 19:
-                if self.imcval > 30:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem obesidade"))
-                elif self.imcval >= 24.9:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem sobrepeso"))
-                elif self.imcval >= 18.5:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso normal"))
-                else:
-                    self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem um peso abaixo do normal"))
-
-
+        if self.imcval > categorias[self.gen][idade_ref][0]:
+            self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem \nobesidade"))
+            
+        elif self.imcval >= categorias[self.gen][idade_ref][1]:
+            self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem \nsobrepeso"))
+            
+        elif self.imcval >= categorias[self.gen][idade_ref][2]:
+            self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem \num peso normal"))
+            
+        else:
+            self.label_4.setText(str(f"O seu IMC é {self.imcval:.2f} e tem \num peso abaixo do normal"))
 
 
     def retranslateUi(self, MainWindow):
